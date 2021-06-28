@@ -4,24 +4,31 @@
     box-sizing: border-box;
 }
 
-body{
-    background-color: #dbdbd3;
+.clearfix{
+    content: '';
+    display: table;
+    clear: both;
 }
 
-.container{
-    width: 70%;
-    margin: 50px auto;
-    height: 800px;
-    background-color: red;
+body{
+    background-color: #dbdbd3;
+    font-family: 'Roboto', sans-serif;
 }
 
 .green_head{
-    height: 100px;
+    height: 125px;
     background-color: #009688;
     position: fixed;
     top: 0;
     width: 100%;
     z-index: -1;
+}
+
+.container{
+    width: 70%;
+    margin: 25px auto;
+    height: 800px;
+    background-color: red;
 }
 
 .main_box{
@@ -40,4 +47,65 @@ body{
     min-width: calc((100% / 3) * 2);
     background-color: lightseagreen;
     height: 100%;
+}
+
+
+
+/* chat side header */
+.contact_header{
+    height: 75px;
+    width: 100%;
+    background-color: #eaeaea;
+    display: flex;
+    justify-content: space-between;
+}
+
+.user_info, .user_actions {
+    height: 100%;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+}
+
+
+
+.avatar{
+    border-radius: 50%;
+    height: 55px;
+    margin-right: 10px;
+}
+
+.icons_spec{
+    color: #b1b1b1;
+}
+
+.icons_spec > i{
+    font-size: 21px;
+    margin: 0 10px;
+    cursor: pointer;
+}
+
+/* chat side banner notifiche */
+
+.cta_notifiche{
+    height: 80px;
+    width: 100%;
+    display: flex;
+    background-color: #8edafc;
+    align-items: center;
+
+}
+
+.icon_rounded{
+    border-radius: 50%;
+    background-color: white;
+    color: #8edafc;
+    height: 50px;
+    width: 50px;
+    font-size: 23px;
+    text-align: center;
+    line-height: 50px;
+    margin-left: 10px;
+    cursor: pointer;
 }

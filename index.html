@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet"> 
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
     <title>Document</title>
 </head>
@@ -14,8 +17,30 @@
     <div id="app" class="container">
         <div class="main_box">
             <div class="contact_side">
+                <!-- header sezione contatti (parte sinistra) -->
+                <div class="contact_header">
+                    <!-- informazioni utente -->
+                    <div class="user_info ">
+                        <img src="img/avatar_4.jpg" class="avatar">
+                        <span>Nome utente</span>
+                    </div>
 
+                    <!-- azioni utente -->
+                    <div class="user_actions icons_spec">
+                        <i class="fas fa-circle-notch"></i>
+                        <i class="fas fa-comment-alt"></i>
+                        <i class="fas fa-ellipsis-v"></i>
+                    </div>
+                </div>
+                <!-- banner notifiche -->
+                <div class="cta_notifiche">
+                    <div class="icon_rounded">
+                        <i class="fas fa-bell-slash"></i>
+                    </div>
+                    
+                </div>
             </div>
+            
             <div class="chat_side">
                 
             </div>
