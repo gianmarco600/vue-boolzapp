@@ -87,7 +87,7 @@ body{
 }
 
 .icons_spec > i{
-    font-size: 21px;
+    font-size: 23px;
     margin: 0 10px;
     cursor: pointer;
 }
@@ -214,3 +214,61 @@ body{
     overflow-y: scroll;
     height: 100%;
 }
+
+/* chat side (parte destra) */
+
+.chat_header{
+    height: 75px;
+    width: 100%;
+    background-color: #eaeaea;
+    display: flex;
+    justify-content: space-between;
+    border-left: 1px solid rgba(211, 211, 211, 0.671);
+}
+
+.time_info{
+    color: rgb(168, 168, 168);
+}
+
+.chat_header  i{
+    margin: 0 15px;
+}
+
+/* corpo chat */
+
+.chat_view{
+    width: 100%;
+    background-image: url("../img/mine.jpg");
+    height: 100%;
+    overflow-y: scroll;
+}
+
+
+
+.chat_input{
+    height: 80px;
+    background-color: #f3eeea;
+    display: flex;
+    justify-content: space-around;
+    align-items: center ;
+}
+
+.chat_input > .ico{
+    height: 80%;
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
+}
+
+.ico > i{
+    color: #b1b1b1;
+    cursor: pointer;
+}
+
+.messaggio{
+    width: 80%;
+    padding: 10px;
+    border-radius: 10px;
+}
+
