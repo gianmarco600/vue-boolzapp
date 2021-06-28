@@ -52,7 +52,7 @@
                 </div>
                 <!-- chat list -->
                 <section class="chat_list">
-                    <div v-for="user in contacts" class="chat_overview">
+                    <div @click="changeCurrentChat(index)" v-for="(user , index) in contacts" class="chat_overview " :class="(currentChat == user) ? 'selected_chat' : ''">
                         <img class="chat_avatar" :src="getAvatar(user)" alt="">
                         <div class="chat_info">
                             <div class="user_name">{{user.name}}</div>
@@ -147,13 +147,13 @@
 <!------------------------------------------------------------------- rightside-->
             <div class="chat_side flex_col">
                 <!-- header sezione chat (parte destra) -->
-                <div class="chat_header">
+                <div class="chat_side_header">
                     <!-- informazioni utente -->
-                    <div class="user_info ">
-                        <img src="img/avatar_6.jpg" class="avatar">
+                    <div class="user_info">
+                        <img :src="getAvatar(currentChat)" class="avatar">
                         <div class="chat_info flex_col">
-                            <div class="user_name">nome utente</div>
-                            <span class="time_info">ultimo accesso xx:xx</span>
+                            <div class="user_name">{{currentChat.name}}</div>
+                            <span class="time_info">Ultimo accesso <span>{{currentChat.messages[0].date}}</span></span>
 
                         </div>
                     </div>
@@ -168,7 +168,12 @@
                 <!-- corpo chat -->
                 <div class="chat_view">
                     <div class="chat_body">
-                        
+                        <div class="chat_container">
+                            <div v-for="(message, index) in currentChat.messages" :class="(message.status == 'sent') ? 'right_side' : 'left_side'" class="right_side msg clearfix">
+                                <div>{{message.text}}</div>
+                                <div class="time_info _chat">{{message.date}}</div>
+                            </div>
+                        </div>
                     </div>
 
                 </div>

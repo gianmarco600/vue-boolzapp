@@ -80,6 +80,7 @@ body{
     border-radius: 50%;
     height: 55px;
     margin-right: 10px;
+    cursor: pointer;
 }
 
 .icons_spec{
@@ -226,6 +227,7 @@ body{
 
 .user_name{
     justify-self: flex-start;
+    margin-top: 3px;
 }
 
 .chat_list{
@@ -233,9 +235,20 @@ body{
     height: 100%;
 }
 
+
+/* chat selezionata */
+
+.selected_chat{
+    background-color: #eaeaea;
+}
+
+.selected_chat:hover{
+    background-color: #eaeaea;
+}
+
 /* chat side (parte destra) */
 
-.chat_header{
+.chat_side_header{
     height: 75px;
     width: 100%;
     background-color: #eaeaea;
@@ -246,6 +259,7 @@ body{
 
 .time_info{
     color: rgb(168, 168, 168);
+    font-size: 12px;
 }
 
 .chat_header  i{
@@ -260,8 +274,42 @@ body{
     height: 100%;
     overflow-y: scroll;
 }
+/* stile messaggi, fumetti e container */
+.chat_container{
+    margin: 0 auto;
+    height: 40%;
+    width: 80%;
+    z-index: 304504534;
+}
 
+.chat_container .msg{
+    min-width: 60%;
+    max-width: 90%;
+    padding: 14px 12px;
+    display: block;
+    margin: 10px 0;
+    border-radius: 10px;
+    position: relative;
+}
 
+.right_side{
+    background-color: #dcf8c6;
+    float: left;
+}
+
+.left_side{
+    background-color: #ece5dd;
+    float: right;
+}
+
+._chat{
+    position: absolute;
+    bottom: 1px;
+    right: 6px;
+    font-size: 10px;
+}
+
+/* footer del chat side */
 
 .chat_input{
     height: 80px;

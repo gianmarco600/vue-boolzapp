@@ -1,6 +1,7 @@
 const app = new Vue({
     el: '#app',
     data: {
+        currentChat:'none',
         contacts: [    
             {        
                 name: 'Michele',        
@@ -46,13 +47,24 @@ const app = new Vue({
                     }        
                 ]    
             }
-        ]
+        ],
+    },
+    mounted(){
+        this.currentChat = this.contacts[0];
     },
     methods: {
         getAvatar(contact){
             let img = contact.avatar;
             let dir = 'img/avatar'+ img +'.jpg';
             return dir;
+        },
+        changeCurrentChat(indice){
+            this.currentChat = this.contacts[indice];
+        },
+        getH(string){
+            let a = string.split("");
+            return a[1]
         }
+        
     }
 })
