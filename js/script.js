@@ -1,6 +1,7 @@
 const app = new Vue({
     el: '#app',
     data: {
+        tempText:'',
         currentChat:'none',
         contacts: [    
             {        
@@ -64,6 +65,21 @@ const app = new Vue({
         getH(string){
             let a = string.split("");
             return a[1]
+        },
+        sendMsg(){
+            let today = new Date();
+            let date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+            let time = today.getHours() + ":" + today.getMinutes() + ":" + 
+            today.getSeconds();
+            let dateTime = date+' '+time;
+            let newMsg = {
+                date: dateTime,
+                text: this.tempText,
+                status: 'sent'
+            };
+            this.currentChat.messages.push(newMsg);
+            this.tempText = '';
+
         }
         
     }

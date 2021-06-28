@@ -177,11 +177,12 @@
                     </div>
 
                 </div>
+                <!-- zona input -->
                 <div class="chat_input">
                     <div class="ico">
                         <i class="far fa-grin-alt"></i>
                     </div>
-                    <input type="text" name="message" id="text-input" class="messaggio" placeholder="Scrivi un messaggio">
+                    <input type="text" name="message" id="textInput" class="messaggio" v-model="tempText" @keyup.enter="sendMsg" placeholder="Scrivi un messaggio">
 
                     <div class="ico">
                         <i class="fas fa-microphone"></i>

@@ -294,12 +294,13 @@ body{
 
 .right_side{
     background-color: #dcf8c6;
-    float: left;
+    float:  right;
 }
 
 .left_side{
     background-color: #ece5dd;
-    float: right;
+    
+    float: left;
 }
 
 ._chat{
