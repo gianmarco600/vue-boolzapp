@@ -188,13 +188,31 @@ body{
     border-bottom: 1px solid rgba(211, 211, 211, 0.39);
     background-color: white;
     padding:0 10px;  
-  
+    cursor: pointer;
+}
+
+.chat_overview:hover{
+    background-color:rgba(211, 211, 211, 0.164);
 }
 
 .chat_avatar{
     border-radius: 50%;
     height: 55px;
     
+}
+
+.message_overview{
+    margin: 3px 0 5px 0;
+    color: rgba(175, 172, 172, 0.849);
+}
+
+.date_message_overview{
+    color: rgba(211, 211, 211, 0.52);
+    font-size: 12px;
+}
+
+.chat_overview:hover .date_message_overview{
+    color: #00968767;
 }
 
 .chat_info{
@@ -249,8 +267,9 @@ body{
     height: 80px;
     background-color: #f3eeea;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center ;
+    padding: 0 10px;
 }
 
 .chat_input > .ico{
@@ -258,7 +277,9 @@ body{
     font-size: 30px;
     display: flex;
     align-items: center;
-    padding: 0 15px;
+    padding: 0 10px;
+    margin: 0 5px;
+    
 }
 
 .ico > i{
@@ -267,8 +288,14 @@ body{
 }
 
 .messaggio{
-    width: 80%;
-    padding: 10px;
+    width: 90%;
+    padding: 15px;
     border-radius: 10px;
+    border: 2px solid #b1b1b194;
+    margin: 0 5px;
 }
 
+.chat_input input::placeholder{
+    font-size: 18px;
+    
+}

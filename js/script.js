@@ -47,5 +47,12 @@ const app = new Vue({
                 ]    
             }
         ]
+    },
+    methods: {
+        getAvatar(contact){
+            let img = contact.avatar;
+            let dir = 'img/avatar'+ img +'.jpg';
+            return dir;
+        }
     }
 })
