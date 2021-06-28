@@ -104,8 +104,73 @@ body{
     height: 50px;
     width: 50px;
     font-size: 23px;
-    text-align: center;
-    line-height: 50px;
     margin-left: 10px;
     cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
+.text_n_box{
+    color: black;
+    font-size: 15px;
+    margin-left: 10px;
+}
+
+.text_n_box > a{
+    color: gray;
+    font-size: 12px;
+    display: block;
+    margin-top:7px ;
+}
+
+.text_n_box > div{
+    font-weight: 500;
+}
+
+/* barra di ricerca */
+
+.search{
+    background-color: #fafafa;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+
+}
+
+.search input[type=text] {
+    width: 85%;
+    padding: 6px;
+    border: none;
+    margin-top: 8px;
+    margin: 10px 0;
+    font-size: 17px;
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
+    
+}
+::placeholder {
+    color: lightgray;
+    opacity: 1; /* Firefox */
+}
+
+.search_btn{
+    margin: 10px 0;
+    background-color: white;
+    width: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+    border-right: 1px solid rgba(211, 211, 211, 0.561);
+    cursor: pointer;
+}
+
+.search_btn > i{
+    color: gray;
+    
+}
+
+/* chat list */
+
