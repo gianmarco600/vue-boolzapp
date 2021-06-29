@@ -50,7 +50,7 @@ const app = new Vue({
             }
         ],
     },
-    mounted(){
+    beforeMount(){
         this.currentChat = this.contacts[0];
     },
     methods: {
@@ -66,21 +66,40 @@ const app = new Vue({
             let a = string.split("");
             return a[1]
         },
-        sendMsg(){
+        getDate(){
             let today = new Date();
             let date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
             let time = today.getHours() + ":" + today.getMinutes() + ":" + 
             today.getSeconds();
             let dateTime = date+' '+time;
+            return dateTime
+        },
+
+        timer(){
+            let timer = setTimeout(this.autoMsg(), 3000);
+            clearTimeout(timer);
+        },
+        
+        autoMsg(){
             let newMsg = {
-                date: dateTime,
+                date: this.getDate(),
+                text: 'ok',
+                status: 'received'
+            };
+            this.currentChat.messages.push(newMsg);
+        },
+
+        sendMsg(){
+            
+            let newMsg = {
+                date: this.getDate(),
                 text: this.tempText,
                 status: 'sent'
             };
             this.currentChat.messages.push(newMsg);
             this.tempText = '';
+            this.timer();
+        },
 
-        }
-        
     }
 })

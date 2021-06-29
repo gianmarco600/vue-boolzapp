@@ -171,6 +171,9 @@
                         <div class="chat_container">
                             <div v-for="(message, index) in currentChat.messages" :class="(message.status == 'sent') ? 'right_side' : 'left_side'" class="right_side msg clearfix">
                                 <div>{{message.text}}</div>
+                                <div class="info_btn">
+                                    <i class="fas fa-chevron-down"></i>
+                                </div>
                                 <div class="time_info _chat">{{message.date}}</div>
                             </div>
                         </div>

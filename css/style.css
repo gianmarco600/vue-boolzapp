@@ -232,7 +232,7 @@ body{
 
 .chat_list{
     overflow-y: scroll;
-    height: 100%;
+    height: calc(100% - 53px - 75px -75px);
 }
 
 
@@ -271,8 +271,11 @@ body{
 .chat_view{
     width: 100%;
     background-image: url("../img/mine.jpg");
-    height: 100%;
+    height: calc(100% - 80px - 75px) ;
     overflow-y: scroll;
+    display: flex;
+    flex-direction: column-reverse;
+    padding: 10px 0;
 }
 /* stile messaggi, fumetti e container */
 .chat_container{
@@ -299,7 +302,7 @@ body{
 
 .left_side{
     background-color: #ece5dd;
-    
+
     float: left;
 }
 
@@ -309,6 +312,25 @@ body{
     right: 6px;
     font-size: 10px;
 }
+
+.info_btn{
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 5px;
+    right: 0;
+    color: rgba(128, 128, 128, 0.589);
+    cursor: pointer;
+}
+
+.info_btn > i {
+    display: none;
+}
+
+.msg:hover .info_btn > i{
+    display: block;
+}
+
 
 /* footer del chat side */
 
@@ -337,7 +359,7 @@ body{
 }
 
 .messaggio{
-    width: 90%;
+    width: 83%;
     padding: 15px;
     border-radius: 10px;
     border: 2px solid #b1b1b194;
