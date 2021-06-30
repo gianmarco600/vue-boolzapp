@@ -56,7 +56,7 @@
                         <img class="chat_avatar" :src="getAvatar(user)" alt="">
                         <div class="chat_info">
                             <div class="user_name">{{user.name}}</div>
-                            <div class="message_overview">{{user.messages[0].text}}</div>
+                            <div class="message_overview">{{user.messages[user.messages.length - 1].text}}</div>
                             <div class="date_message_overview">{{user.messages[0].date}}</div>
                         </div>
                     </div>
@@ -197,6 +197,8 @@
 
     </div>
 
+    <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
+    <script>dayjs().format()</script>
     <script src="js/script.js"></script>
 </body>
 </html>

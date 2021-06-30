@@ -7,7 +7,7 @@ const app = new Vue({
             {        
                 name: 'Michele',        
                 avatar: '_1',        
-                visible: true,        
+                visible: true,    
                 messages: [            
                     {                
                         date: '10/01/2020 15:30:55',                
@@ -29,7 +29,7 @@ const app = new Vue({
             {        
                 name: 'Fabio',        
                 avatar: '_2',        
-                visible: true,        
+                visible: true,         
                 messages: [            
                     {                
                         date: '20/03/2020 16:30:00',                
@@ -53,6 +53,14 @@ const app = new Vue({
     beforeMount(){
         this.currentChat = this.contacts[0];
     },
+    Update(){
+        this.contacts.sort(function(a,b){
+            let date1 = a.messages[this.contacts[a].messages.length - 1];
+            let date2 = b.messages[this.contacts[b].messages.length - 1];
+            return date1.diff(date2)
+        });
+
+    },
     methods: {
         getAvatar(contact){
             let img = contact.avatar;
@@ -62,22 +70,21 @@ const app = new Vue({
         changeCurrentChat(indice){
             this.currentChat = this.contacts[indice];
         },
-        getH(string){
-            let a = string.split("");
-            return a[1]
-        },
         getDate(){
-            let today = new Date();
-            let date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
-            let time = today.getHours() + ":" + today.getMinutes() + ":" + 
-            today.getSeconds();
-            let dateTime = date+' '+time;
-            return dateTime
+            let date = dayjs();
+            console.log(date);
+            return date
+            
+            // let today = new Date();
+            // let date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+            // let time = today.getHours() + ":" + today.getMinutes() + ":" + 
+            // today.getSeconds();
+            // let dateTime = date+' '+time;
+            // return dateTime
         },
 
         timer(){
-            let timer = setTimeout(this.autoMsg(), 3000);
-            clearTimeout(timer);
+            let timer = setTimeout(this.autoMsg, 3000);
         },
         
         autoMsg(){
@@ -99,6 +106,17 @@ const app = new Vue({
             this.currentChat.messages.push(newMsg);
             this.tempText = '';
             this.timer();
+            // let timer = setTimeout(() => {
+                
+            //     let newMsg = {
+            //         date: this.getDate(),
+            //         text: 'ok',
+            //         status: 'received'
+            //     };
+            //     this.currentChat.messages.push(newMsg);
+            // }, 3000);
+            console.log(this.currentChat);
+            
         },
 
     }
