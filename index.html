@@ -48,16 +48,16 @@
                     <label for='search'class="search_btn">
                         <i class="fas fa-search"></i>
                     </label>
-                    <input name="search" type="text" placeholder="Cerca o inizia una nuova chat">
+                    <input v-on:keyup="filter" v-model="filtro" name="search" type="text" placeholder="Cerca o inizia una nuova chat">
                 </div>
                 <!-- chat list -->
                 <section class="chat_list">
-                    <div @click="changeCurrentChat(index)" v-for="(user , index) in contacts" class="chat_overview " :class="(currentChat == user) ? 'selected_chat' : ''">
+                    <div @click="changeCurrentChat(index)" v-for="(user , index) in contacts" class="chat_overview " :class="[(currentChat == user) ? 'selected_chat' : '',(contacts[index].visible == false) ? 'hidden' : '']">
                         <img class="chat_avatar" :src="getAvatar(user)" alt="">
                         <div class="chat_info">
                             <div class="user_name">{{user.name}}</div>
                             <div class="message_overview">{{user.messages[user.messages.length - 1].text}}</div>
-                            <div class="date_message_overview">{{user.messages[0].date}}</div>
+                            <div class="date_message_overview">{{user.messages[user.messages.length - 1].date}}</div>
                         </div>
                     </div>
                     <!-- scroll test -->
